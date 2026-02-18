@@ -1,0 +1,60 @@
+/* ===== PrintedFusiON — Global Styles ===== */
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #00f2ff;
+}
+
+/* Classe utilitária para scrollbars nos painéis interiores */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+/* Fontes base */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #050505;
+    color: #ffffff;
+}
+
+.font-tech {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Efeitos Glow */
+.glow-cyan {
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+}
+
+.text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.6);
+}
+
+/* Animação de loading bar (usada no Contact.tsx) */
+@keyframes loading-bar {
+    0% { transform: scaleX(0); }
+    50% { transform: scaleX(0.7); }
+    100% { transform: scaleX(1); }
+}
+
+.animate-loading-bar {
+    animation: loading-bar 1.8s ease-in-out infinite;
+}
