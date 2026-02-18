@@ -25,15 +25,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <>
-      <div 
+      <div
         onClick={openDetails}
         className="group bg-[#0a0a0a] border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-cyan-500 hover:-translate-y-2 cursor-pointer shadow-lg"
       >
         <div className="relative aspect-square overflow-hidden bg-[#050505]">
           {!imageError ? (
-            <img 
-              src={product.image} 
-              alt={product.name} 
+            <img
+              src={product.image}
+              alt={product.name}
               onError={() => setImageError(true)}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
@@ -68,10 +68,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               {product.price.toLocaleString('pt-PT', { style: 'currency', currency: 'EUR' })}
             </span>
             <div className="flex items-center space-x-2">
-               <span className="text-[9px] font-bold text-cyan-500 uppercase tracking-widest group-hover:mr-2 transition-all">Explorar</span>
-               <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-               </svg>
+              <span className="text-[9px] font-bold text-cyan-500 uppercase tracking-widest group-hover:mr-2 transition-all">Explorar</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+              </svg>
             </div>
           </div>
         </div>
@@ -80,9 +80,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       {showModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 animate-in fade-in duration-300">
           <div className="absolute inset-0 bg-black/98 backdrop-blur-2xl" onClick={() => setShowModal(false)}></div>
-          
+
           <div className="relative w-full max-w-6xl bg-[#050505] border border-gray-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh]">
-            <button 
+            <button
               onClick={() => setShowModal(false)}
               className="absolute top-6 right-6 z-20 w-12 h-12 bg-white/5 hover:bg-red-500/20 rounded-full flex items-center justify-center text-gray-500 hover:text-red-500 transition-all border border-white/10"
             >
@@ -96,7 +96,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                   <img src={activeMedia.url} className="max-w-full max-h-[50vh] object-contain rounded-xl shadow-2xl animate-in zoom-in-95 duration-500" alt="" />
                 ) : (
                   <div className="w-full h-full max-h-[50vh] aspect-video bg-gray-900 rounded-xl overflow-hidden flex items-center justify-center">
-                    <iframe 
+                    <iframe
                       className="w-full h-full"
                       src={activeMedia.url.includes('youtube') ? activeMedia.url.replace('watch?v=', 'embed/') : activeMedia.url}
                       frameBorder="0"
@@ -105,11 +105,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                   </div>
                 )}
               </div>
-              
+
               {/* Miniaturas */}
               <div className="p-6 bg-black/50 border-t border-gray-900 flex space-x-3 overflow-x-auto custom-scrollbar">
                 {allMedia.map((media, idx) => (
-                  <button 
+                  <button
                     key={idx}
                     onClick={() => setActiveMedia(media)}
                     className={`flex-shrink-0 w-16 h-16 rounded-lg border-2 overflow-hidden transition-all relative ${activeMedia.url === media.url ? 'border-cyan-500 scale-110' : 'border-gray-800 opacity-60 hover:opacity-100'}`}
@@ -148,11 +148,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 <span className="text-6xl font-bold text-white font-tech tracking-tighter">
                   {product.price.toFixed(2)}€
                 </span>
-                
+
                 <div className="mt-12 p-6 bg-cyan-500/5 border border-cyan-500/10 rounded-2xl">
                   <p className="text-xs text-cyan-500/70 font-bold uppercase tracking-widest leading-relaxed">
-                    Personalização disponível em São João da Madeira.<br/>Contacte o estúdio para materiais técnicos ou orçamentos em massa.
-                  </p>
+                    Personalização disponível em São João da Madeira.<br />Para comprar pode utilizar os meios disponiveis nos contactos (Whastapp,Email, etc).                  </p>
                 </div>
               </div>
             </div>
